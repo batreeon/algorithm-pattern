@@ -180,6 +180,7 @@ func backtrack(nums []int, visited []bool, list []int, result *[][]int) {
 			continue
 		}
         // 上一个元素和当前相同，并且没有访问过就跳过
+		// 没有访问过，说明已经回退掉了，那么就是该元素的路径已经走过了，不需要再走了。如果已经访问过了，说明list中已经有该元素了。
 		if i != 0 && nums[i] == nums[i-1] && !visited[i-1] {
 			continue
 		}
